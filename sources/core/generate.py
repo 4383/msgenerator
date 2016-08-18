@@ -1,4 +1,6 @@
-from core.ui import ui
+from sources.core.ui import ui
+
+
 def generate():
     print("-"*25)
     print("Action generate")

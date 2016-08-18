@@ -13,14 +13,15 @@ class Repo():
     headers = None
     config = None
 
-    def __init__(self, projectfile):
+    def __init__(self, verbose=False, projectfile='Microservice'):
         self.config = load_config(projectfile)
         self.set_headers()
-        self.log_headers()
         self.set_data()
-        self.log_data()
         self.set_url()
-        self.log_url()
+        if verbose:
+            self.log_headers()
+            self.log_data()
+            self.log_url()
 
     def set_headers(self):
         auth = self.config['repo']['auth']
